@@ -41,7 +41,12 @@
 
 function showValues( obj ) {
   //Code Here
-
+  let v
+  let text = ''
+  for(v in obj) {
+    text += obj[v]
+  }
+  return text
 }
 
 
@@ -56,7 +61,13 @@ function showValues( obj ) {
 
 //Code Here
 function greaterThan10(obj) {
-
+  let v
+  for(v in obj) {
+    if(obj[v] > 10) {
+      obj[v] = 0
+    }
+  }
+  return obj
 }
 
 
@@ -70,6 +81,13 @@ function greaterThan10(obj) {
 */
 
 //Code Here
+function double(obj) {
+  let v
+  for(v in obj) {
+    obj[v] *= 2
+  }
+  return obj
+}
 
 
 
@@ -84,6 +102,16 @@ function greaterThan10(obj) {
 */
 
 //Code Here
+function secrets(obj) {
+  let v
+  let str = ''
+  for(v in obj) {
+    if (v.includes('sh')) {
+      str += obj[v]
+    }
+  }
+  return str
+}
 
 
 
@@ -94,13 +122,13 @@ function greaterThan10(obj) {
 */
 
 // var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
+  // one: 1,
+  // two: 2,
+  // three: 3
 // }
 
 // for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
+  // delete deleteAllThethings[key]
 // }
 
 // console.log(deleteAllThethings)
@@ -115,6 +143,10 @@ function greaterThan10(obj) {
 */
 
 //Code Here
+function removePassword(obj) {
+  delete obj.password
+  return obj
+}
 
 
 
@@ -134,6 +166,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+let prob6Loop
+for(prob6Loop in deleteTheBigNumbers) {
+  if(deleteTheBigNumbers[prob6Loop] > 100) {
+    delete deleteTheBigNumbers[prob6Loop]
+  }
+}
 
 
 
@@ -147,6 +185,15 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+const startsWithK = (obj) => {
+  let v
+  for(v in obj) {
+    if(v.startsWith('k') === true) {
+      delete obj[v]
+    }
+  }
+  return obj
+}
 
 
 
@@ -162,5 +209,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+const hiddenTreasure = (obj) => {
+  let v
+  for(v in obj) {
+    if(obj[v].includes('treasure') !== true) {
+      delete obj[v]
+    }
+  }
+  return obj
+}
 
 
