@@ -128,9 +128,5 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 let bobsPurchaces = purchases.filter((el) => el.owner === 'Bob')
 let bobsTotal = bobsPurchaces.reduce((acc, el) => {return acc + el.price}, 0)
 
-// let bobsTotal = purchaces.reduce((accumulator, element) => {
-//   if (element.owner === 'Bob') {
-//     accumulator + element.price
-//   }
-// })
+
 
